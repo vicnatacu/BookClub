@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following  
   validates :email, uniqueness: true
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true, allow_blank: true
   
   def name
     return username ? username : email
