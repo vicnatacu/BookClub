@@ -1,0 +1,13 @@
+<h1 class="heading"><%=@author.name%></h1>
+
+<%=render "books_for_author", :author => @author%>
+
+<div class="list-item">
+ <h1><%= pluralize @book.users.length, "user" %> have this book
+listed</h1>
+ <ul class="list-item">
+ <% @book.users.each do |user| %>
+ <li class="list-item"><%= user.name %></li>
+ <% end %>
+ </ul>
+</div>

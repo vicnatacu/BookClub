@@ -1,0 +1,7 @@
+<div id="sidenav">
+<%if user_signed_in?%>
+ <%=link_to  'My List', book_list_items_path%>
+ <%end%>
+ <%=link_to 'Books', books_path%>
+ <%=link_to 'Authors', authors_path%>
+</div>

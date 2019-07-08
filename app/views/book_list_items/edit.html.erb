@@ -1,0 +1,15 @@
+<h1>Edit <%@book_list_item.book.title%></h1>
+
+
+from <%= @book_list_item.user.email%>'s list
+
+<%= form_with model: @book_list_item do |form|%>
+    <p class = "list-item"> 
+        <%=form.check_box :for_trade %>
+        <%=form.label "Available for trade" %>
+    </p>
+    <p class="list-item">
+    <%=form.submit "save changes"%>
+    </p>
+
+<%end%>
