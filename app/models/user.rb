@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, allow_blank: true
   
   def name
-    return username ? username : email
+    return username.blank? ? email : username
   end
 
 end
