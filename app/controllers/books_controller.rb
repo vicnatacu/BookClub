@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     
     def create
         author = Author.create_author(params[:book][:first_name], params[:book][:last_name])
-        @book = Book.create_book(params[:book][:title], author, params[:book][:genre])
+        @book = Book.create_book(params[:book][:title], author, params[:book][:genre], params[:book][:price])
         @book.cover.attach(params[:book][:cover])
 
         if @book.valid?

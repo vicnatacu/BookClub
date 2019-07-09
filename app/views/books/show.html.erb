@@ -7,6 +7,14 @@
 <%end%>
 </p>
 
+<% if @book.price%>
+<p class="book-item">
+<%= number_to_currency @book.price %>
+</p>
+<p><%=link_to "Buy Now", new_order_path(book_id: @book.id) %></p>
+<% end %>
+
+
 
 <% if user_signed_in? %>
    <%if  @can_add %>

@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   get "reviews/new", to: "reviews#new", as: "new_review"
   post "reviews", to: "reviews#create"
   post "follow/:user_id", to: "relationships#create", as: "follow_user"
-
+  get "orders/", to: "orders#new", as: "new_order"
 end
 
